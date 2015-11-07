@@ -1,0 +1,5 @@
+db.group.insert({
+    usersID: ['123', '345'],
+    flight: 'flightID',
+    isGroupConfirmed: 'boolean'
+})
