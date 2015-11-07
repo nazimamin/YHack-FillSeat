@@ -1,6 +1,32 @@
-<!--
-    Including Slider here.
--->
-<div ng-include="'/views/staffPicks.html'" class="container set-container-margin"></div>
+<div class="jumbotron">
+  <h1>FillSeat</h1>
+  <p class="lead">
+    <img src="images/plane.svg" alt="Plane" width="178" height="206"><br>
+    Getting you those last few seats.
+  </p>
+  <div ng-controller="MainCtrl" ng-cloak>
 
-<div ng-include="'/views/topSellerCat.html'"></div>
+    <!-- Select origin drop down menu -->
+    <md-input-container>
+      <md-select ng-model="option" placeholder="Select an origin">
+        <md-option value="{{ option }}" ng-repeat="option in origin">{{ option }}</md-option>
+      </md-select>
+    </md-input-container>
+
+    <!-- Select destination drop down menu -->
+    <md-input-container>
+      <md-select ng-model="destinationOption" placeholder="Select a destination">
+        <md-option value="{{ destinationOption }}" ng-repeat="destinationOption in destination">{{ destinationOption }}</md-option>
+      </md-select>
+    </md-input-container>
+
+    <!-- Enter number of people in the group -->
+    <md-input-container>
+      <input type="number" ng-model="quantity" placeholder="How many people?" required max="9" min="1">
+    </md-input-container>
+
+    <!-- Send request data to server and store variables -->
+    <p><a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" ng-click="postData(option, destinationOption, quantity)">Go!</a></p>
+
+  </div>
+</div>
