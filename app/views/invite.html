@@ -1,0 +1,11 @@
+<div ng-controller="InviteCtrl">
+	<!-- Generate people number of email field to send out the email invite -->
+    <div ng-model="emails" ng-repeat="person in getNumber(number) track by $index">
+      <md-input-container>
+        <input type="email" placeholder="example@example.com">
+      </md-input-container>
+    </div>
+
+    <!-- Sends email to the recipients written in the text fields -->
+    <p><a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" ng-click="invite(emails)">Invite</a></p>
+</div>
