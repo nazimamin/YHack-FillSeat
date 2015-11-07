@@ -1,9 +1,16 @@
-<div ng-controller="LoginCtrl">
-	<md-input-container>
-		<input-type="email" ng-model="email" placeholder="example@example.com"> 
-	</md-input-container>
-	<md-input-container>
-		<input-type="password" ng-model="password" placeholder="************">
-	</md-input-container>
-	<p><a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" ng-click="register(email, password)">Register</a></p>
-</div>
+<div class="margin-top" ng-controller="LoginCtrl">
+    <div class="main-container">
+        <md-card>
+            <md-input-container>
+
+                <input required type="email" ng-model="email" placeholder="email" />
+            </md-input-container>
+
+            <md-input-container>
+                <input required type="password" ng-model="password" placeholder="password" />
+            </md-input-container>
+            <md-input-container>
+                <md-button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" ng-click="register(email, password)">Register</md-button>
+            </md-input-container>
+        </md-card>
+    </div>

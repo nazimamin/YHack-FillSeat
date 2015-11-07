@@ -1,18 +1,19 @@
-<div ng-controller="DealsCtrl">
-  <!-- Generate cards to show results from server -->
-  <md-content class="md-padding" ng-repeat="deal in deals">
-    <md-card>
-      <img ng-src="images/{{ deal.destination }}.png" class="md-card-image" alt="images/plane.svg" show-gt-md flex>
-      <img src="images/plane.svg" hide-gt-md flex>
-      <md-card-content>
-        <h1 class="md-title" text-align="left"> {{ deal.origin }} TO {{ deal.destination }} <h1 align-text="right"> ${{ deal.price }} </h1> </h1>
-        <h3><b>Date: </b> {{ deal.date }} </h3>
-        <h3><b>Seats available: </b> {{ deal.empty }} </h3>
-      </md-card-content>
-      <md-card-actions layout="row" layout-align="end center">
-        <md-button>Purchase</md-button>
-        <md-button>Share</md-button>
-      </md-card-actions>
-    </md-card>
-  </md-content>
+<div class="margin-top" ng-controller="DealsCtrl">
+    <!-- Generate cards to show results from server -->
+    <div class="main-container">
+        <md-content class="md-padding" ng-repeat="deal in deals">
+            <md-card>
+                <img ng-src="../images/{{ deal.destination }}.png" class="md-card-image">
+                <md-card-content>
+                    <h2 class="md-title" text-align="left"> {{ deal.origin }} TO {{ deal.destination }} <h1 align-text="right"> ${{ deal.price }} </h1> </h2>
+                    <h4><b>Date: </b> {{ deal.date }} </h4>
+                    <h4><b>Seats available: </b> {{ deal.empty }} </h4>
+                </md-card-content>
+                <md-card-actions layout="row" layout-align="end center">
+                    <md-button ng-click="changeview()">Purchase</md-button>
+                    <md-button>Share</md-button>
+                </md-card-actions>
+            </md-card>
+        </md-content>
+    </div>
 </div>

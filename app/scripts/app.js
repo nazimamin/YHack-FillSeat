@@ -2,9 +2,9 @@
 
 /**
  * @ngdoc overview
- * @name ndtndtApp
+ * @name fillsSeat
  * @description
- * # ndtndtApp
+ * # fillSeat
  *
  * Main module of the application.
  */
@@ -16,7 +16,8 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'ngMaterial'
   ])
     .config(function ($routeProvider) {
         $routeProvider
@@ -25,10 +26,15 @@ angular
                 controller: 'MainCtrl',
                 controllerAs: 'main'
             })
-            .when('/about', {
-                templateUrl: 'views/about.html',
-                controller: 'AboutCtrl',
-                controllerAs: 'about'
+            .when('/deals', {
+                templateUrl: 'views/deals.html',
+                controller: 'DealsCtrl',
+                controllerAs: 'deals'
+            })
+            .when('/login', {
+                templateUrl: 'views/login.html',
+                controller: 'LoginCtrl',
+                controllerAs: 'login'
             })
             .otherwise({
                 redirectTo: '/'
