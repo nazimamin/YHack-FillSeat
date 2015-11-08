@@ -1,19 +1,19 @@
 <div class="margin-top" ng-controller="LoginCtrl">
     <div class="main-container">
-        <md-card>
+        <md-card class="login-card">
             <md-input-container>
-
-                <input required type="email" ng-model="email" placeholder="email" />
+                <input required type="email" ng-model="email" placeholder="Email" />
             </md-input-container>
 
             <md-input-container>
-                <input required type="password" ng-model="password" placeholder="password" />
+                <input required type="password" ng-model="password" placeholder="Password" />
             </md-input-container>
             <md-input-container>
-                <md-button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" ng-click="register(email, password)">Register</md-button>
-            </md-input-container>
-            <md-input-container>
-                <md-button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" ng-click="login(email, password)">Login</md-button>
+                <md-button class="login-button md-primary" ng-click="login(email, password)">Login</md-button>
             </md-input-container>
         </md-card>
     </div>
+    <md-input-container>
+        <md-button class="md-raised md-warn" ng-click="register(email, password)">Register</md-button>
+    </md-input-container>
+</div>

@@ -123,3 +123,22 @@
                 }
             }
         }
+        
+        .login-card {
+            padding: 30px 20px 0 20px;
+            .login-button {
+                padding: 0 10px;
+            }
+        }
+        
+        ::-webkit-input-placeholder {
+            font-size: 14px;
+        }
+        
+        ::-moz-placeholder {
+            font-size: 14px;
+        }
+        
+        :-ms-input-placeholder {
+            font-size: 14px;
+        }
