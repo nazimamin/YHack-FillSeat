@@ -20,7 +20,7 @@ angular.module('fillSeat')
                 console.log($scope.userInfo);
                 $http({
                     method: 'POST',
-                    url: 'http://172.26.10.41:3000/api/invite',
+                    url: 'http://172.20.10.2:3000/api/invite',
                     headers: {
                         'Content-type': 'application/json'
                     },
