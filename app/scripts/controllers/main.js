@@ -36,14 +36,20 @@ angular.module('fillSeat')
                         qty: quantity
                     }
                 }).then(function successCallback(response) {
-                    //asynchronously grabs the response
-                    console.log(response.data);
-                    shareData.setDeals(response.data);
-                    $location.path('deals');
+                        //asynchronously grabs the response
+                        console.log(response.data);
+                        if (response.data.length < 1) {
+                            $mdToast.showSimple('Sorry, your search did not match any deals. :( Try again!');
+                            $location.path('/');
+                        } else {
+                            shareData.setDeals(response.data);
+                            $location.path('deals');
+                        }
 
-                }, function errorCallback(response) {
-                    $location.path('emptySadView');
-                });
+                    },
+                    function errorCallback(response) {
+                        $location.path('nodeal');
+                    });
 
             }
             console.log(option, destinationOption, quantity);

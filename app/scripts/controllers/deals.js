@@ -11,7 +11,6 @@ angular.module('fillSeat')
     .controller('DealsCtrl', function ($http, $scope, shareData, $location) {
         $scope.deals = shareData.getDeals();
         $scope.changeview = function () {
-            console.log('ok');
             $location.path('login');
         };
     });

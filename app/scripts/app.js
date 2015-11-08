@@ -36,6 +36,16 @@ angular
                 controller: 'LoginCtrl',
                 controllerAs: 'login'
             })
+            .when('/nodeal', {
+                templateUrl: 'views/nodeal.html',
+                controller: 'MainCtrl',
+                controllerAs: 'nodeal'
+            })
+            .when('/invite', {
+                templateUrl: 'views/invite.html',
+                controller: 'InviteCtrl',
+                controllerAs: 'invite'
+            })
             .otherwise({
                 redirectTo: '/'
             });

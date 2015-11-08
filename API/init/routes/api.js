@@ -132,39 +132,56 @@ router.post('/getDeals', function (req, res, next) {
 
 router.post('/register', function (req, res, next) {
     var user = new User({
-        email: req.body.email,
-        password: req.body.password,
+        email: req.body.e,
+        password: req.body.p,
         name: "",
         isConfirmed: false,
         flight: "",
         group: ""
     });
     user.save(function (err, usr) {
-        if (err) console.log(err);
-        else{
+        if (err) {
+            res.status(err.status || 500);
+            res.send("Error registering user");
+        } else {
             console.log("good");
             res.send(JSON.stringify(usr));
         }
     });
-    res.send('success');
 });
 
 router.post('/login', function (req, res, next) {
     console.log("Received: " + req);
     User.find({
-        email: req.body.email,
-        password: req.body.password
-        }), function(err, users){
-            if (err) res.send("Invalid username or password");
-            else{
+            email: req.body.e,
+            password: req.body.p
+        },
+        function (err, users) {
+            console.log(users);
+            if (err) {
+                res.send("Invalid username or password");
+            } else {
                 res.send("Success!");
-        }
-    }
-    console.log("Something happened");
-    res.send('register');
+            }
+        });
 });
 
 router.post('/invite', function (req, res, next) {
+    console.log(req.body.email[1]);
+    // get a user with ID of 1
+    // get the user starlord55
+    User.find({
+        email: req.body.email[0][0]
+    }, function (err, user) {
+        if (err) throw err;
+        // object of the user
+        user.groupId = req.body.email[1];
+        user.save(function (err) {
+            if (err) throw err;
+            console.log('User successfully updated!');
+        });
+    });
+
     res.send('invite');
 });
 
