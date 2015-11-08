@@ -1,9 +1,27 @@
 <div ng-controller="InviteCtrl">
 	<!-- Generate people number of email field to send out the email invite -->
-    <div ng-model="emails" ng-repeat="person in getNumber(number) track by $index">
-      <md-input-container>
-        <input type="email" placeholder="example@example.com">
-      </md-input-container>
+
+	<!-- List of people added -->
+	<md-content>
+		<md-list>
+			<md-subheader class="md-no-sticky">People already added</md-subheader>
+			<md-list-item class="md-2-line" ng-repeat="person in added">
+				<div class="md-list-item" layout="column">
+					<h3>{{ person.name }}</h3>
+					<h4>{{ person.email }}</h4>
+				</div>
+			</md-list-item>
+		</md-list>
+	</md-content>
+
+    <div>
+    	<md-input-container>
+    		<input ng-model="name" type="text" placeholder="Name">
+    	</md-input-container>
+    	<md-input-container>
+     		<input ng-model="email" type="email" placeholder="example@example.com">
+    	</md-input-container>
+    	<p><a class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" ng-click="addPerson(name, email)">Add User</a></p>
     </div>
 
     <!-- Sends email to the recipients written in the text fields -->

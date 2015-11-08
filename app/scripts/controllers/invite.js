@@ -9,6 +9,7 @@
  */
 angular.module('jetblueApp')
   .controller('InviteCtrl', '$scope', '$html', function ($scope, $html) {
+  	$scope.added = [];
     $scope.invite = function(emails){
 		$http({
 			method: 'POST',
@@ -23,4 +24,7 @@ angular.module('jetblueApp')
 				console.log(response);
 			});
 	};
+	$scope.addPerson = function(n, e){
+		$scope.added.push({name: n, email: e});
+	}
   });
