@@ -4,8 +4,15 @@
         <md-content class="md-padding" ng-repeat="deal in deals">
             <md-card>
                 <img ng-src="../images/{{ deal.destination }}.png" class="md-card-image">
-                <md-card-content>
-                    <h2 class="md-title" text-align="left"> {{ deal.origin }} TO {{ deal.destination }} <h1 align-text="right"> ${{ deal.price }} </h1> </h2>
+                <md-card-content class="deals-card">
+                    <h2 class="md-title" text-align="left"> {{ deal.origin }} TO {{ deal.destination }} </h2>
+                    <div class="price-class">
+                        <h1 align-text="left">${{deal.price}}</h1>
+                        <h5>originally</h5>
+                        <h2 align-text="right">${{ deal.originalPrice }} </h2>
+                    </div>
+
+
                     <h4><b>Date: </b> {{ deal.date }} </h4>
                     <h4><b>Seats available: </b> {{ deal.empty }} </h4>
                 </md-card-content>

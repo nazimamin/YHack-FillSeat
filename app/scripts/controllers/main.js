@@ -26,7 +26,7 @@ angular.module('fillSeat')
                 $scope.number = quantity;
                 $http({
                     method: 'POST',
-                    url: 'http://172.26.10.41:5000/api/getDeals',
+                    url: 'http://172.26.10.41:3000/api/getDeals',
                     headers: {
                         'Content-type': 'application/json'
                     },
@@ -37,38 +37,12 @@ angular.module('fillSeat')
                     }
                 }).then(function successCallback(response) {
                     //asynchronously grabs the response
-                    console.log(response);
-                    //$scope.deals = response;
-                    $scope.deals = {
-                        'destination': 'BOS',
-                        'origin': 'JFK',
-                        'price': '258.67',
-                        'date': 'November 7, 2015',
-                        'empty': '62'
-                    };
-
-                    $location.url(dealsView);
-
-                }, function errorCallback(response) {
-
-                    $scope.deals = [{
-                            'destination': 'BOS',
-                            'origin': 'JFK',
-                            'price': '258.67',
-                            'date': 'November 7, 2015',
-                            'empty': '62'
-                        },
-                        {
-                            'destination': 'LGB',
-                            'origin': 'JFK',
-                            'price': '135.08',
-                            'date': 'November 7, 2015',
-                            'empty': '41'
-                        }];
-                    shareData.setDeals($scope.deals);
+                    console.log(response.data);
+                    shareData.setDeals(response.data);
                     $location.path('deals');
 
-                    console.log($scope.deals);
+                }, function errorCallback(response) {
+                    $location.path('emptySadView');
                 });
 
             }

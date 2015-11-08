@@ -107,3 +107,19 @@
                 padding: 30px;
             }
         }
+        
+        .deals-card {
+            .price-class {
+                h1 {
+                    display: inline-block;
+                }
+                h5 {
+                    margin-left: 10px;
+                    margin-right: 10px;
+                    display: inline-block;
+                }
+                h2 {
+                    display: inline-block;
+                }
+            }
+        }
