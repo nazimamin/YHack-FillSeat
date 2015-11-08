@@ -87,9 +87,8 @@ router.post('/insert', function (req, res, next) {
         }
     });
 });
-/*
 
-*/
+
 router.post('/getDeals', function (req, res, next) {
     var src = req.body.src;
     var des = req.body.des;
@@ -132,10 +131,36 @@ router.post('/getDeals', function (req, res, next) {
 });
 
 router.post('/register', function (req, res, next) {
-    res.send('register');
+    var user = new User({
+        email: req.body.email,
+        password: req.body.password,
+        name: "",
+        isConfirmed: false,
+        flight: "",
+        group: ""
+    });
+    user.save(function (err, usr) {
+        if (err) console.log(err);
+        else{
+            console.log("good");
+            res.send(JSON.stringify(usr));
+        }
+    });
+    res.send('success');
 });
 
 router.post('/login', function (req, res, next) {
+    console.log("Received: " + req);
+    User.find({
+        email: req.body.email,
+        password: req.body.password
+        }), function(err, users){
+            if (err) res.send("Invalid username or password");
+            else{
+                res.send("Success!");
+        }
+    }
+    console.log("Something happened");
     res.send('register');
 });
 
