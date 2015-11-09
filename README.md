@@ -22,6 +22,27 @@ Prioritize key features of the finished product.
 ##What's next for FillSeat
 Expand beyond webapps, provide more personalized deals (eg: for veterans) and solve this problem for more than just flights.
 
+## Installing node_modules
+
+```sh
+npm install
+```
+
+## Installing bower_components
+
+```sh
+bower install --save
+```
+
+## Running the server
+```sh
+cd api/init && npm start
+```
+
+## Running grunt 
+```sh
+grunt serve
+```
 
 ## Contributors
 
