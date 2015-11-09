@@ -38,7 +38,7 @@ var User = mongoose.model('User', UserSchema);
 var Group = mongoose.model('Group', GroupSchema);
 var Flight = mongoose.model('Flight', FlightSchema);
 
-
+//this get is just a test to see port is working.. 
 /* GET home page. */
 router.get('/', function (req, res, next) {
     var flight_1 = new Flight({
@@ -57,6 +57,7 @@ router.get('/', function (req, res, next) {
         title: 'Express'
     });
 });
+// real work starts here
 
 router.post('/insert', function (req, res, next) {
     var p_date = new Date();
