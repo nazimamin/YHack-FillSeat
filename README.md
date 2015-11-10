@@ -46,4 +46,4 @@ grunt serve
 
 ## Contributors
 
-Made with :hotsprings: by [@Nazim](http://github.com/nazimamin) & [@Teo](http://github.com/teovoinea)
+Made with :hotsprings: by [@Nazim](http://github.com/nazimamin) & [@Teo](http://github.com/teovoinea) & [@Thomas](https://github.com/ModestGoblin)
