@@ -15,7 +15,7 @@ angular.module('fillSeat')
             } else {
                 $http({
                     'method': 'POST',
-                    'url': 'http://172.20.10.2:3000/api/register',
+                    'url': 'http://192.168.1.130:3000/api/register',
                     'header': 'apllication/json',
                     'data': {
                         e: email,
@@ -34,7 +34,7 @@ angular.module('fillSeat')
             } else {
                 $http({
                         'method': 'POST',
-                        'url': 'http://172.20.10.2:3000/api/login',
+                        'url': 'http://192.168.1.130:3000/api/login',
                         'header': 'application/json',
                         'data': {
                             e: email,

@@ -26,7 +26,7 @@ angular.module('fillSeat')
                 $scope.number = quantity;
                 $http({
                     method: 'POST',
-                    url: 'http://172.20.10.2:3000/api/getDeals',
+                    url: 'http://192.168.1.130:3000/api/getDeals',
                     headers: {
                         'Content-type': 'application/json'
                     },
